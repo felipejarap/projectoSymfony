@@ -1,0 +1,35 @@
+{#plantilla de nuesta aplicacion#}
+{% extends 'base.html.twig' %}
+ {% block title %}
+ {% endblock %}
+{#contenido#}
+ {% block body %}
+    <div class="container">
+    <table class="table">
+
+  <!--Table head-->
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Fecha</th>
+      <th>Num personas</th>
+      <th>Observaciones</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+    {% for reserva in reservas %}
+    <tr>
+      <th scope="row">{{reserva.id}}</th>
+      <td>{{reserva.fecha| date ("y/m/d h:i")}} </td>
+      <td>{{reserva.comensales}}}</td>
+      <td>{{reserva.observaciones}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <!--Table body-->
+    </table>
+<!--Table-->
+</div
+ {% endblock %}

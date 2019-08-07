@@ -1,0 +1,28 @@
+{#plantilla de nuesta aplicacion#}
+{% extends 'base.html.twig' %}
+{% form_theme form 'form/platoForm.html.twig' %}
+ {% block title %} 
+ Registro de Usuario
+ {% endblock %}
+{#contenido#}
+ {% block body %}
+
+<div class="container">
+
+    <!-- Intro Content -->
+    <div class="row">
+      <div class="col-lg-6">
+          {{ form_start(form) }}
+          {{ form_errors(form) }}
+          {{ form_end(form) }}
+      </div>
+      <div class="col-lg-6">
+        <h2>¿Esta registrado?</h2>
+        <p>Si usted ya tiene una cuenta registrada por favor pinche</p>
+        <a href="{{path ('login') }}">Registro</a>
+      </div>
+    </div>
+    <!-- /.row -->
+</div>
+
+{% endblock %}
